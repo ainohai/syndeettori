@@ -1,0 +1,109 @@
+<style>
+  img {
+    max-width: 50%;
+  }
+  .main {
+    margin-top:20vh;
+  }
+  button {
+    margin-left: 2em;
+  }
+  p {
+    margin: 1em;
+  }
+  h1 {
+    margin-bottom: 3.5em;
+
+  }
+  .blink_me {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  .rainbow {
+
+    /* Font options */
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 4px #000000;
+    font-size:40px;
+
+    /* Chrome, Safari, Opera */
+    -webkit-animation: rainbow 5s infinite;
+
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+
+    /* Standar Syntax */
+    animation: rainbow 5s infinite;
+  }
+
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes rainbow{
+    0%{color: orange;}
+    10%{color: purple;}
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes rainbow{
+    0%{color: orange;}
+    10%{color: purple;}
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
+
+  /* Standar Syntax */
+  @keyframes rainbow{
+    0%{color: orange;}
+    10%{color: purple;}
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
+
+  body{
+    background-color:#607D8B;
+  }
+
+/*  .container{
+    //background-color:#E0F2F1;
+    padding:100px;
+    //border-radius:15px;
+    //box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+  }*/
+
+</style>
+
+<div class="container main">
+  <h2>Syötä koodi: </h2>
+  <input [value]="koodi"
+         (input)="koodi=$event.target.value" >
+  <button class="btn btn-primary" (click)="onClickMe()">Hae</button>
+  <p>Haettu vihjettä koodilla: {{sent}}</p>
+  <img [src]="image | safe:'resourceUrl'"/>
+</div>
